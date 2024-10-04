@@ -1,0 +1,68 @@
+1. User Authentication and Management
+Login system:
+A login page where users (both requestors and approvers) can enter their credentials (username and password) to access the system.
+After logging in, users should have the ability to change their password.
+Role-based authentication: Depending on the user’s role (Engineer, Manager, Business Manager, Managing Director), they will have access to different features of the system.
+Password encryption: Store passwords in encrypted form in the database.
+2. Role-based Stationery Management
+Checking stationery availability:
+A role-based interface where users can check the availability of stationery items.
+Engineers/Managers/Business Managers will have different levels of access to stationery items.
+Applying for stationery requests:
+Users can apply for new stationery requests, specifying necessary details like the dates and their superior’s email ID.
+Viewing stationery applications:
+Users should be able to see their pending stationery requests and their current status (submitted for approval, approved, or rejected).
+Eligibility details:
+A section where users can view their eligibility based on their role (e.g., how much they are allowed to request in terms of cost).
+3. Request Approval and Withdrawal
+Approving/rejecting requests:
+Users in a superior role (like managers or business managers) should be able to approve or reject the stationery requests submitted to them.
+Withdrawing requests:
+Users should be able to withdraw a stationery request before it is approved.
+Cancelling approved requests:
+Users should be able to cancel their stationery requests after they have been approved, but only after getting approval from their superior.
+4. Notification System
+Automatic messaging:
+Automatic notifications should be triggered whenever certain actions occur:
+A new stationery request is entered.
+A stationery request is cancelled, withdrawn, approved, or rejected.
+A password change is made.
+Notifications should be sent to both the requester and their superior.
+5. Manager Reporting
+Stationery item reports:
+Managers should be able to generate reports showing the percentage of cost incurred for each stationery item.
+Cumulative cost report:
+A report showing the total cost incurred for each stationery item, headcount for each item, and the cumulative cost.
+6. Organizational Hierarchy and User Roles
+Database structure:
+Create a database to store details about the people in the organization, their roles, and the hierarchy.
+Details to store in the database:
+Employee/registration number
+Name
+Grade/Role
+Location
+System login
+Encrypted password
+Define the reporting hierarchy (e.g., Engineers report to Managers, Managers report to Business Managers, etc.).
+7. Help Pages
+Help section:
+A help system in the form of FAQ/Q&A to guide users on how to use various features of the stationery management system, such as:
+How to apply for a new stationery request.
+How to check the status of requests.
+How to withdraw or cancel a request.
+How to approve/reject requests.
+8. User Interface and Sub-systems
+User interface:
+Design screens for different functions such as:
+Create a new request.
+Update existing requests.
+Delete or withdraw requests.
+Approve or reject requests.
+Cancel approved requests.
+Subsystems:
+Automatic notification subsystem:
+Implement an automatic notification service that sends notifications based on user actions.
+Report generation subsystem:
+A subsystem to generate reports for managers, detailing costs associated with different stationery items.
+Request management subsystem:
+A system that handles the full lifecycle of stationery requests: create, update, delete, withdraw, cancel, approve, reject.
