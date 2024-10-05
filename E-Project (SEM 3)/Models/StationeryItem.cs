@@ -1,20 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 public class StationeryItem
 {
-    [Key]
-    public int ItemId { get; set; }
+    public int StationeryItemId { get; set; }
 
     [Required]
     [MaxLength(100)]
-    public string ItemName { get; set; }
+    public string Name { get; set; }
 
-    public string Description { get; set; }
+    // Specify precision and scale for UnitCost
+    [Column(TypeName = "decimal(18, 2)")]
+    public decimal UnitCost { get; set; }
 
-    public int AvailableStock { get; set; }
-
-    [Required]
-    public decimal UnitPrice { get; set; }
-
-    public ICollection<Request> Requests { get; set; }
+    public int Quantity { get; set; }
 }

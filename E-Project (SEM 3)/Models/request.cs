@@ -1,43 +1,24 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 public class Request
 {
-    [Key]
     public int RequestId { get; set; }
 
-    public int UserId { get; set; }
-    [ForeignKey("UserId")]
-    public User User { get; set; }
+    [Required]
+    public DateTime RequestDate { get; set; }
 
-    public int ItemId { get; set; }
-    [ForeignKey("ItemId")]
-    public StationeryItem Item { get; set; }
+    // Foreign key to User (who requested)
+    public int RequestorId { get; set; }
+    public User Requestor { get; set; }
+
+    // Foreign key to StationeryItem
+    public int StationeryItemId { get; set; }
+    public StationeryItem StationeryItem { get; set; }
 
     [Required]
-    public int Quantity { get; set; }
+    public int QuantityRequested { get; set; }
 
     [Required]
-    public decimal TotalCost { get; set; }
-
-    [Required]
-    public RequestStatus Status { get; set; } = RequestStatus.Pending;
-
-    public int? ManagerId { get; set; }
-    [ForeignKey("ManagerId")]
-    public User Approver { get; set; }
-
-    public DateTime RequestedAt { get; set; } = DateTime.Now;
-    public DateTime? ApprovedAt { get; set; }
-    public DateTime? CancelledAt { get; set; }
-    public DateTime? WithdrawnAt { get; set; }
-}
-
-public enum RequestStatus
-{
-    Pending,
-    Approved,
-    Rejected,
-    Withdrawn,
-    Cancelled
+    public string Status { get; set; }
 }

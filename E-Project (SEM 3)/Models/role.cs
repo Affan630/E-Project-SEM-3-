@@ -1,19 +1,18 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 public class Role
 {
-    [Key]
     public int RoleId { get; set; }
 
     [Required]
     [MaxLength(50)]
     public string RoleName { get; set; }
 
-    [Required]
+    // Specify precision and scale for MaxBudget
+    [Column(TypeName = "decimal(18, 2)")]
     public decimal MaxBudget { get; set; }
 
     public ICollection<User> Users { get; set; }
-
-    public ICollection<Hierarchy> Hierarchies { get; set; }
-    public ICollection<Hierarchy> SuperiorRoles { get; set; }
 }
